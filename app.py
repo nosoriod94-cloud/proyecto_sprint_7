@@ -3,15 +3,24 @@ import plotly.express as px
 import streamlit as st
      
 car_data = pd.read_csv('vehicles_us.csv') # leer los datos
-hist_button = st.button('Construir histograma') # crear un botón
 
 st.title("Análisis Exploratorio de Datos")
 
+st.text("")
+
 st.header("Vehiculos Anunciados en Plataformas Web")
+
+st.text("")
 
 st.subheader("Data")
 
+st.text("")
+
 st.dataframe(car_data)
+
+st.text("")
+
+hist_button = st.button('Construir histograma') # crear un botón
 
 if hist_button: # al hacer clic en el botón
          # escribir un mensaje
@@ -22,6 +31,8 @@ if hist_button: # al hacer clic en el botón
      
          # mostrar un gráfico Plotly interactivo
          st.plotly_chart(fig, use_container_width=True)
+
+st.text("")
 
 scatter_button = st.button('Construir grafico de dispersion') # crear un botón para grafico de dispersion
      
@@ -34,6 +45,8 @@ if scatter_button: # al hacer clic en el botón
      
          # mostrar un gráfico Plotly interactivo de dispersion
          st.plotly_chart(fig, use_container_width=True)
+
+st.text("")
 
 # crear una casilla de verificación
 build_histogram = st.checkbox('Construir un histograma')
